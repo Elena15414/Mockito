@@ -22,6 +22,7 @@ public class MovieManager {
     public MovieManager[] findAll() {
         return movies;
     }
+
     public void addMovies(MovieManager item) {
         MovieManager[] tmp = new MovieManager[movies.length + 1];
         for (int i = 0; i < movies.length; i++) {
@@ -30,17 +31,17 @@ public class MovieManager {
         tmp[tmp.length - 1] = item;
         movies = tmp;
     }
-    public MovieManager[] findLast(){
+
+    public MovieManager[] findLast() {
         if (limitMovie > movies.length) {
             resultLength = movies.length;
         } else {
             resultLength = limitMovie;
-    }
+        }
         MovieManager[] result = new MovieManager[resultLength];
         for (int i = 0; i < resultLength; i++) {
             result[i] = movies[movies.length - 1 - i];
         }
         return result;
     }
-
 }
